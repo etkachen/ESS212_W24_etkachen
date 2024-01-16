@@ -1,3 +1,5 @@
+% Unit tests
+
 disp("Testing the functions provided in the Homework 1 PDF for calculating S1.")
 disp("Recursive function, for n = 5: S = " + S1_rec(5))
 disp("Iterative function, for n = 5: S = " + S1_iter(5))
@@ -17,6 +19,7 @@ disp("For n = 5: S = " + S2_rec(5))
 disp("For n = 8: S = " + S2_rec(8))
 
 
+% Functions
 function S = S1_rec(n)
 	if n > 1
 		S = n + S1_rec(n-1);
