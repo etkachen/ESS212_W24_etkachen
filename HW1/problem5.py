@@ -5,8 +5,11 @@ def geom_prog_sum(a, n, r):
     # If r is not equal to 1, just use the Equation (19)
     if r != 1:
         return (a * (1 - r**n))/(1 - r)
+    # If it is, each term in the sequence is a*1 n times, so it is a*n
     else:
         return a*n
+
+# Running tests
         
 print("Testing the function for calculating the sum of the geometric progression.")
 print("For a = 1, n = 5, r = -0.5: S = ", geom_prog_sum(1, 5, -0.5))
