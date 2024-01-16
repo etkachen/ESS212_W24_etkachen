@@ -12,7 +12,9 @@ def binom_coeff_rec(n, k):
 def binom_coeff(n, k):
     k = k-1
     return binom_coeff_rec(n,k)
-        
+
+
+# Running tests
         
 print("Testing the recursive function for calculating the k-th binomial coefficient for the n-th power.")
 print("For n = 0, k = 1: C(n,k) = ", binom_coeff(0, 1))
@@ -23,6 +25,7 @@ print("For n = 8, k = 7: C(n,k) = ", binom_coeff(8, 7))
 
 
 # Now that we have the function for calculating binomial coefficients, we can have a function for printing out the entire row of the Pascal triangle.
+# We will use the finite loop of n iterations.
 
 def pascal_row(n):
     row = []
@@ -32,7 +35,9 @@ def pascal_row(n):
     row.append(binom_coeff(n, n+1))
     return row
     
-        
+
+# Running tests
+
 print("Testing the function for printing out the nth row of the Pascal triangle.")
 print("For n = 0: ", pascal_row(0))
 print("For n = 2: ", pascal_row(2))
