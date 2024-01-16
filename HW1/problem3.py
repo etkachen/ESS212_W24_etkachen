@@ -1,3 +1,5 @@
+# Defining functions provided in homework PDF 
+
 def S1_rec(n):
 	if n > 1:
 		S = n + S1_rec(n-1)
@@ -11,11 +13,14 @@ def S1_iter(n):
 		S = S+i
 	return S
     
+# Running tests
 
 print("Testing the functions provided in the Homework 1 PDF for calculating S1.")
 print("Recursive function, for n = 5: S = ", S1_rec(5))
 print("Iterative function, for n = 5: S = ", S1_iter(5))
-# Both algorithms work.
+# Both functions work.
+
+# Defining functions and running tests for other two equations provided for the Problem 3 
 
 def O1_rec(n):
     if n > 1:
