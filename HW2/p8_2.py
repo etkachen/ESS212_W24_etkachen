@@ -22,7 +22,7 @@ def p8_2(dt, h):
     return z[:i+1],v[:i+1]
     
     
-z,v = p8_2(1, 1000)
+z,v = p8_2(1, 100)
 plt.plot(0.5*11.5*(v**2), label = "Kinetic energy, J")
 plt.plot(11.5*9.81*z, label = "Potential energy, J")
 plt.plot(0.5*11.5*(v**2) + 11.5*9.81*z, label = "Total energy, J")
