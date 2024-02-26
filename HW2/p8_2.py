@@ -8,11 +8,11 @@ import matplotlib.pyplot as plt
 def p8_2(dt, h):
     z = np.zeros(1000)
     v = np.zeros(1000)
-    z[0] = 0
+    z[0] = h
     ts = 0
     i = 0
     v[0] = 0
-    while (z[i] > -h):
+    while (z[i] > 0):
         print("At t =", ts, "s, Wille-E's height =", z[i], "m.")
         i = i+1
         ts = ts + dt

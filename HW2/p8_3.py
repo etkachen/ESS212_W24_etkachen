@@ -4,18 +4,18 @@ import matplotlib.pyplot as plt
 def p8_3(dt, h):
     z = np.zeros(1000)
     v = np.zeros(1000)
-    z[0] = 0
+    z[0] = h
     ts = 0 
     i = 0 # iterator
     v[0] = 0
-    while (z[i] > -h):
+    while (z[i] > 0):
         if i % 2 == 0:
             print("At t =", ts, "s, Wille-E's height =", z[i], "m.")
         i = i + 1
         ts = ts + dt
         if i == 1:
             v[i] = 0 - 2*9.81*dt
-            z[i] = 0
+            z[i] = h
         else:
             v[i] = v[i-2] - 2*9.81*dt
             z[i] = z[i-2] + 2*dt*v[i-1]
