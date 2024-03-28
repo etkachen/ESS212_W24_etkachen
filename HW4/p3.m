@@ -11,13 +11,12 @@ betahat = (A' * A) \ (A' * (reshape(y,1,[]))');
 elog = A*betahat + log(reshape(y,1,[]))';
 % to get the value of e, we can just get the exponent of elog
 e = exp(elog);
-% the formula of the posterior probability: 1/sigma^11 exp (- (e'e)/(2*sigma^2))
-% same logarithm as in problem 1, then?
-sigma = sqrt((0.25 * (e' * e))/11);
-% it's around 4.96, seems reasonable?
+% calculate mean and variance
+mu = mean(e);
+sigma = var(e);
 
 % print out b, m, sigma
-str = ['b = ', num2str(betahat(2)), ', m = ', num2str(betahat(1)), ', sigma = ', num2str(sigma)];
+str = ['b = ', num2str(betahat(2)), ', mu = ', num2str(mu), ', sigma = ', num2str(sigma)];
 disp(str)
 
 % 3D mesh
@@ -62,7 +61,6 @@ mean_m = trapz(m_range, m_range .* pdf_m);
 var_m = trapz(m_range, (m_range - mean_m).^2 .* pdf_m);
 mean_sigma = trapz(sigma_range, sigma_range .* pdf_sigma);
 var_sigma = trapz(sigma_range, (sigma_range - mean_sigma).^2 .* pdf_sigma);
-std_dev_sigma = sqrt(var_sigma);
 
 % print out results
 disp(['Mean of b: ', num2str(mean_b)]);
@@ -70,4 +68,4 @@ disp(['Variance of b: ', num2str(var_b)]);
 disp(['Mean of m: ', num2str(mean_m)]);
 disp(['Variance of m: ', num2str(var_m)]);
 disp(['Mean of sigma: ', num2str(mean_sigma)]);
-disp(['Standard deviation of sigma: ', num2str(std_dev_sigma)]);
+disp(['Variance of sigma: ', num2str(var_sigma)]);
